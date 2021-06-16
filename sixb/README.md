@@ -14,22 +14,24 @@ We implement a model-independent approach by studying the most general forms of 
 
 We are exploring decays involving theretical scalar bosons whose presence and subsequent detection would provide a deeper understanding of electroweak interactions between fundamental particles. These decays yield a final state comprising six *b* jets, which must be detected amongst QCD background and whose combinatoric complications depend on the process by which they are produced.
 
-<table>
+<p align="center">
+  <table>
   <thead>
-    <tr>
+      <tr>
       <th>Feynman Diagram of Possible TRSM Process</th>
-    </tr>
+      </tr>
   </thead>
   <tbody>
-    <tr>
+      <tr>
       <td>
-        <p align="center">
+          <p align="center">
           <img src="figures/trsm_bp3_feynman_diagram.png" width="500">
-        </p>
+          </p>
       </td>
-    </tr>
+      </tr>
   </tbody>
-</table>
+  </table>
+</p>
 
 ## Papers and Publications
 
