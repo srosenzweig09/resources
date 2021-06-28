@@ -12,6 +12,9 @@ This page contains links to various resources that are relevant to programming. 
       - [Research-Specific](#research-specific)
       - [Personal Projects](#personal-projects)
     - [Plotting with `matplotlib`](#plotting-with-matplotlib)
+  - [High Throughput Computing (HTC)](#high-throughput-computing-htc)
+    - [CRAB](#crab)
+    - [Condor](#condor)
   - [ROOT](#root)
     - [Running C macros using ROOT](#running-c-macros-using-root)
 
@@ -39,12 +42,19 @@ This page contains links to various resources that are relevant to programming. 
 
 #### Personal Projects
 
-- [TKinter]() -
+- [TKinter](https://docs.python.org/3/library/tkinter.html) - The standard Python interface to the Tk GUI toolkit.
 
 ### Plotting with `matplotlib`
 
 - [LateX in matplotlib](https://matplotlib.org/stable/tutorials/text/mathtext.html) - Writing mathematical expressions in `matplotlib`.
 
+## High Throughput Computing (HTC)
+
+### CRAB
+CRAB is a utility to submit CMSSW jobs to distributed computing resources.
+
+### Condor
+Condor is a software system that creates a high throughput computing environment. 
 
 ## ROOT
 
