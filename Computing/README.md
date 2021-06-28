@@ -1,6 +1,6 @@
 # Computing Resources
 
-This page contains links to various resources that are relevant to programming.
+This page contains links to various resources that are relevant to programming. Some of the information is specific to my research but most of this information can be useful to anyone learning to program in Python or C++.
 
 ## Table of Contents
 
@@ -35,6 +35,7 @@ This page contains links to various resources that are relevant to programming.
 
 - [Uproot](https://github.com/scikit-hep/uproot4) - A reader and writer of the ROOT file format using NumPy and Awkward Array (AA is optional but highly recommended).
 - [Awkward Array](https://pypi.org/project/awkward/) - A library for nested, variable-sized data, including arbitrary-length lists, records, mixed types, and missing data, using NumPy-like idioms.
+- [PyROOT](https://pypi.org/project/awkward/) - PyROOT is a collection of ROOT's Python-C++ bindings, which allow the use of ROOT from Python. (*I prefer Uproot to PyROOT but felt it necessary to include this library, since it is widely used in HEP.*)
 
 #### Personal Projects
 
