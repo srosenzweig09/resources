@@ -7,11 +7,18 @@ This page contains links to various resources that are relevant to programming.
 - [Computing Resources](#computing-resources)
   - [Table of Contents](#table-of-contents)
   - [Python](#python)
+    - [Useful Libraries](#useful-libraries)
     - [Plotting with `matplotlib`](#plotting-with-matplotlib)
   - [ROOT](#root)
     - [Running C macros using ROOT](#running-c-macros-using-root)
 
 ## Python
+
+### Useful Libraries
+
+- [NumPy](https://numpy.org) - The fundamental package for scientific computing inPython, this library provides multidimensional array objects, as well as other useful objects. 
+- [matplotlib](https://matplotlib.org) - Visualization with Python: A comprehensive library for creating static, animated, and interactive visualization with Python.
+- [IceCream](https://github.com/gruns/icecream) - A library that makes print debugging a little sweeter.
 
 ### Plotting with `matplotlib`
 
