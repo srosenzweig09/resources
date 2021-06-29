@@ -51,10 +51,59 @@ This page contains links to various resources that are relevant to programming. 
 ## High Throughput Computing (HTC)
 
 ### CRAB
+
 CRAB is a utility to submit CMSSW jobs to distributed computing resources.
 
 ### Condor
-Condor is a software system that creates a high throughput computing environment. 
+
+Condor is a software system that creates a high throughput computing environment. The user prepares a submit description file (extension either `.jdl` or `.sub`) containing the commands and keywords and uses the command `condor_submit file.jdl` to submit the job to HTCondor. An example of a submit description file may contain
+
+~~~~
+universe                = vanilla
+executable              = welcome.sh
+arguments               = $(ClusterId)$(ProcId)
+output                  = output/welcome.$(ClusterId).$(ProcId).out
+error                   = error/welcome.$(ClusterId).$(ProcId).err
+log                     = log/welcome.$(ClusterId).log
+
+initial_dir             = path/to/dir
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT_OR_EVICT
++SpoolOnEvict           = False
+transfer_input_files    = <input_file1>, <input_file2>
+transfer_output_files   = <output_file>
+stream_output           = True
+request_memory          = 1 GB
+getenv                  = True
+queue
+~~~~
+
+Some of the above commands are probably not mandatory, but this is what it looked like when I first got my submission to work properly. The executable may look like this
+
+~~~~
+#!/bin/bash
+
+echo "welcome to HTCondor tutorial"
+~~~~
+
+I found it very important to include the `#!/bin/bash` to make sure the executable can be run by Condor. The user can query using the command `condor_q`, which will show output like
+
+~~~~
+-- Schedd: submit.chtc.wisc.edu : <127.0.0.1:9618?... @ 12/31/69 23:00:00
+OWNER    BATCH_NAME    SUBMITTED   DONE   RUN    IDLE   HOLD  TOTAL JOB_IDS
+nemo     batch23       4/22 20:44      _      _      _      1      _ 3671850.0
+nemo     batch24       4/22 20:56      _      _      _      1      _ 3673477.0
+nemo     batch25       4/22 20:57      _      _      _      1      _ 3673728.0
+nemo     batch26       4/23 10:44      _      _      _      1      _ 3750339.0
+nemo     batch27       7/2  15:11      _      _      _      _      _ 7594591.0
+nemo     batch28       7/10 03:22   4428      3      _      _   4434 7801943.0 ... 7858552.0
+nemo     batch29       7/14 14:18   5074   1182     30     19  80064 7859129.0 ... 7885217.0
+nemo     batch30       7/14 14:18   5172   1088     28     30  58310 7859106.0 ... 7885192.0
+
+2388 jobs; 0 completed, 1 removed, 58 idle, 2276 running, 53 held, 0 suspended
+~~~~
+
+
 
 ## ROOT
 
