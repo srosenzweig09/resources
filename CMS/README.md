@@ -1,0 +1,1 @@
+A collection of files relevant to the Compact Muon Solenoid (CMS) at the Large Hadron Collider (LHC).
