@@ -1,2 +1,3 @@
 # resources
-A collection of useful CMS and HEP resources
+
+A collection of resources that I've found useful while performing experimental high energy research.
