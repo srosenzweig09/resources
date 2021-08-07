@@ -6,17 +6,57 @@ This page contains links to various resources that are relevant to programming. 
 
 - [Computing Resources](#computing-resources)
   - [Table of Contents](#table-of-contents)
+  - [Working Remotely](#working-remotely)
+    - [Secure Shell (SSH)](#secure-shell-ssh)
+    - [Linux](#linux)
   - [Python](#python)
     - [Useful Libraries](#useful-libraries)
       - [General](#general)
       - [Research-Specific](#research-specific)
       - [Personal Projects](#personal-projects)
     - [Plotting with `matplotlib`](#plotting-with-matplotlib)
+  - [Jupyter Notebooks & Lab](#jupyter-notebooks--lab)
+    - [Useful commands](#useful-commands)
   - [High Throughput Computing (HTC)](#high-throughput-computing-htc)
     - [CRAB](#crab)
     - [Condor](#condor)
   - [ROOT](#root)
     - [Running C macros using ROOT](#running-c-macros-using-root)
+
+## Working Remotely
+
+### Secure Shell (SSH)
+
+Secure Shell (SSH) is a network protocol that provides secure command-line access to remote machines. CERN provides a CERN UNIX cluster LXPLUS which can be accessed from the command line using the following
+
+`ssh <username>@lxplus.cern.ch`
+
+Kerberos credentials can be entered using the `kinit` command, which will allow you to remote into LXPLUS without having to enter your password each time.
+
+### Linux
+
+- List of Useful Commands
+
+Command   | Action                                          | Example
+----------|-------------------------------------------------|-----------------------------
+`ls`      | Show directory contents                         | `ls -l`
+`cd`      | Change directory                                | `cd ~`
+`mkdir`   | Create a new folder/directory                   | `mkdir new_dir`
+`touch`   | Create a new file                               | `touch new_file.txt`
+`rm`      | Remove/delete a file                            | `rm new_file.txt`
+`cat`     | Show contents of a file                         | `cat new_file.txt`
+`pwd`     | Show full path to current directory             | `pwd`
+`cp`      | Copy file/folder                                | `cp /path/to/old_file.txt path/to/new_file.txt`
+`mv`      | Move file/folder                                | `mv /path/to/old_file.txt /new/path/to/old_file.txt`
+`grep`    | Search for a specific phrase in file/lines      | `grep 'line' info.txt`
+`find`    | Search files and directories                    | `find [starting directory] [options] [search term]`
+`vi`      | Open VIM text editor                            | `vi file_to_edit.py`
+`history` | Show last 50 used commands                      | `history [number of recent commands to show]`
+`clear`   | Clear the terminal screen                       | `clear`
+`tar`     | Create and unpack compressed archives           | `tar cvzf ArchiveName.tar.gz /path/to/dir` or `tar xvzf FileName.tar.gz`
+`wget`    | Downlaod files from the internet                | `wget http://fileurl/filename.ext`
+`du`      | Get file size                                   | `du [directory path] --max-depth=1`
+
 
 ## Python
 
@@ -47,6 +87,13 @@ This page contains links to various resources that are relevant to programming. 
 ### Plotting with `matplotlib`
 
 - [LateX in matplotlib](https://matplotlib.org/stable/tutorials/text/mathtext.html) - Writing mathematical expressions in `matplotlib`.
+
+## Jupyter Notebooks & Lab
+
+### Useful commands
+
+- [autoreload](https://ipython.readthedocs.io/en/stable/config/extensions/autoreload.html) - IPython extension to reload modules before executing user code. `autoreload` reloads modules automatically before entering the execution of code typed at the IPython prompt.
+
 
 ## High Throughput Computing (HTC)
 
