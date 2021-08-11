@@ -15,6 +15,7 @@ This page contains links to various resources that are relevant to programming. 
       - [Research-Specific](#research-specific)
       - [Personal Projects](#personal-projects)
     - [Plotting with `matplotlib`](#plotting-with-matplotlib)
+    - [Numba](#numba)
   - [Jupyter Notebooks & Lab](#jupyter-notebooks--lab)
     - [Useful commands](#useful-commands)
   - [High Throughput Computing (HTC)](#high-throughput-computing-htc)
@@ -73,6 +74,7 @@ Command   | Action                                          | Example
 - [Pillow (PIL)](https://pillow.readthedocs.io/en/stable/) - This Python imaging library adds image processing capabilities to your Python interpreter.
 - [Pandas](https://pandas.pydata.org/docs/reference/index.html) - A fast, powerful, flexible, and easy to use open source data analysis and manipulation tool.
 - [PyQt](https://www.tutorialspoint.com/pyqt/index.htm) - One of the most popular Python bindings for the Qt cross-platform C++ framework. This library provides a GUI widgets toolkit.
+- [Numba](http://numba.pydata.org) - A high-performance, open source Python JIT compiler that translates a subset of Python and NumPy code into optimized machine code at runtime. See notes below.
 
 #### Research-Specific
 
@@ -87,6 +89,15 @@ Command   | Action                                          | Example
 ### Plotting with `matplotlib`
 
 - [LateX in matplotlib](https://matplotlib.org/stable/tutorials/text/mathtext.html) - Writing mathematical expressions in `matplotlib`.
+
+### Numba
+
+[Numba](http://numba.pydata.org) is a high-performance, open source Python JIT compiler that translates a subset of Python and NumPy code into optimized machine code at runtime using the industry-standard [LLVM](https://llvm.org/) compiler library.
+
+I implemented Numba into one of the modules I built to handle the construction and manipulation of training and testing sets during the development of neural network algorithms developed to aid my analysis. Numba is quite finicky, but seemingly well worth it. I was compelled to try it out when one of my functions was taking an exasperatingly long time to run. I successfully integrated Numba `@jit` decorators into my module after pruning all of the f-strings, replacing the Awkward Array `with array_builder.list()` calls with `array_builder.begin_list()` and `array_builder.end_list()`, and removing the need to unpack variables from a function I was calling (e.g., `var1, *the_rest = some_func()`) by having the function return a list (e.g., `return var1, [var2, var3, var4...]`). Numba would not compile my code until I replaced or removed these features (I'm sure there are ways to work around these requirements but since this was my first escapade into the realm of Numba, I took the "easy" route).
+
+Some important notes about Numba:
+- If your code fails while using `@jit` to speed it up, Numba is unable to indicate where the failure occurred. This appears to be a consequence of the process used to speed up the code. Commenting out the `@jit` will allow you to more precisely identify where the error occurred in your code.
 
 ## Jupyter Notebooks & Lab
 
