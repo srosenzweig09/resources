@@ -9,6 +9,7 @@ This page contains links to various resources that are relevant to CERN.
   - [CERN](#cern)
     - [Computing Tools](#computing-tools)
     - [CERN Discussion](#cern-discussion)
+  - [LHC](#lhc)
   - [CMS](#cms)
     - [CMS Membership](#cms-membership)
     - [HyperNews](#hypernews)
@@ -28,6 +29,10 @@ This page contains links to various resources that are relevant to CERN.
 ### CERN Discussion
 
 - [HyperNews](https://hypernews.cern.ch) - A collection of discussion groups related to each experiment at CERN.
+
+## LHC
+
+- [LHC Schedule](https://lhc-commissioning.web.cern.ch/schedule/LHC-long-term.htm)
 
 ## CMS
 
