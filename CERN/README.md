@@ -9,6 +9,7 @@ This page contains links to various resources that are relevant to CERN.
   - [CERN](#cern)
     - [Computing Tools](#computing-tools)
     - [CERN Discussion](#cern-discussion)
+    - [GRID Certificates](#grid-certificates)
   - [LHC](#lhc)
   - [CMS](#cms)
     - [CMS Membership](#cms-membership)
@@ -29,6 +30,10 @@ This page contains links to various resources that are relevant to CERN.
 ### CERN Discussion
 
 - [HyperNews](https://hypernews.cern.ch) - A collection of discussion groups related to each experiment at CERN.
+
+### GRID Certificates
+
+In order to access specific websites and use the HTC tools, each user must obtain a GRID certificate. Installation on a server for job submission is fairly straightforward. The only nuance I encountered is that it wouldn't install properly unless I provided a PEM password. The certificate itself doesn't not **requre** a password, but I couldn't install the certificate in Safari without password-protecting the certificate. So if you are having trouble getting the certificate to show in Safari, make sure it is password-protected when you import it into Keychain Access.
 
 ## LHC
 
