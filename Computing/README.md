@@ -8,7 +8,7 @@ This page contains links to various resources that are relevant to programming. 
   - [Table of Contents](#table-of-contents)
   - [Working Remotely](#working-remotely)
     - [Secure Shell (SSH)](#secure-shell-ssh)
-    - [Linux](#linux)
+    - [Linux/Bash](#linuxbash)
   - [Python](#python)
     - [Useful Libraries](#useful-libraries)
       - [General](#general)
@@ -34,7 +34,7 @@ Secure Shell (SSH) is a network protocol that provides secure command-line acces
 
 Kerberos credentials can be entered using the `kinit` command, which will allow you to remote into LXPLUS without having to enter your password each time.
 
-### Linux
+### Linux/Bash
 
 - List of Useful Commands
 
@@ -57,6 +57,7 @@ Command   | Action                                          | Example
 `tar`     | Create and unpack compressed archives           | `tar cvzf ArchiveName.tar.gz /path/to/dir` or `tar xvzf FileName.tar.gz`
 `wget`    | Downlaod files from the internet                | `wget http://fileurl/filename.ext`
 `du`      | Get file size                                   | `du [directory path] --max-depth=1`
+`>`       | Redirect standard output away from command line | `ls > list_of_dirs_and_files.txt`
 
 
 ## Python
@@ -97,7 +98,9 @@ Command   | Action                                          | Example
 I implemented Numba into one of the modules I built to handle the construction and manipulation of training and testing sets during the development of neural network algorithms developed to aid my analysis. Numba is quite finicky, but seemingly well worth it. I was compelled to try it out when one of my functions was taking an exasperatingly long time to run. I successfully integrated Numba `@jit` decorators into my module after pruning all of the f-strings, replacing the Awkward Array `with array_builder.list()` calls with `array_builder.begin_list()` and `array_builder.end_list()`, and removing the need to unpack variables from a function I was calling (e.g., `var1, *the_rest = some_func()`) by having the function return a list (e.g., `return var1, [var2, var3, var4...]`). Numba would not compile my code until I replaced or removed these features (I'm sure there are ways to work around these requirements but since this was my first escapade into the realm of Numba, I took the "easy" route).
 
 Some important notes about Numba:
+
 - If your code fails while using `@jit` to speed it up, Numba is unable to indicate where the failure occurred. This appears to be a consequence of the process used to speed up the code. Commenting out the `@jit` will allow you to more precisely identify where the error occurred in your code.
+- As mentioned above, Numba is finicky about what it can handle in your function. It is optimized for Python code and NumPy. If your code only consists of this type of code, one can use the decorator `@jit(nopython=True)`. However, if your code contains any other data types such as Panda DataFrames, etc., Numba will throw errors unless you remove the `nopython=True` argument from the decorator.
 
 ## Jupyter Notebooks & Lab
 
