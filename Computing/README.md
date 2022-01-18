@@ -9,6 +9,8 @@ This page contains links to various resources that are relevant to programming. 
   - [Working Remotely](#working-remotely)
     - [Secure Shell (SSH)](#secure-shell-ssh)
     - [Linux/Bash](#linuxbash)
+      - [**List of Useful Commands**](#list-of-useful-commands)
+    - [Symbolic Link](#symbolic-link)
   - [Python](#python)
     - [Useful Libraries](#useful-libraries)
       - [General](#general)
@@ -36,7 +38,9 @@ Kerberos credentials can be entered using the `kinit` command, which will allow 
 
 ### Linux/Bash
 
-- List of Useful Commands
+The remote servers (lxplus or cmslpc) run Linux and can accessed through the command line. Hence it is important to know some Bash commands. 
+
+#### **List of Useful Commands**
 
 Command   | Action                                          | Example
 ----------|-------------------------------------------------|-----------------------------
@@ -58,6 +62,17 @@ Command   | Action                                          | Example
 `wget`    | Downlaod files from the internet                | `wget http://fileurl/filename.ext`
 `du`      | Get file size                                   | `du [directory path] --max-depth=1`
 `>`       | Redirect standard output away from command line | `ls > list_of_dirs_and_files.txt`
+
+### Symbolic Link
+A symbolic link, also known as a symlink or soft link, is a special type of file that points to another file or directory.
+
+It can be useful if you are working on a remote server with limited space. For example, the servers at Fermilab use a Symbolic link to point you to a work area that, while not backed up, yields a higher (and practical) amount of storage space. I use VSCode, which generates a `.vscode-server/` directory in my home directory that is populated by the application when you run it. Notably, the extensions I downloaded and used typically wound up taking up too much space and would cause issues when trying to run VSCode. To get around this, I moved `.vscode-server/` to my `nobackup/` directory and created a symbolic link in my home directory. To do this, I had to run the following command from my home directory:
+
+```
+ln -s /path/to/.vscode-server
+```
+
+This created a symbolic link, which will redirect anything that VSCode tries to save in `~/.vscode-server` into this new location, saving my home directory from taking up too much space.
 
 
 ## Python
